@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+    <persistence-unit name="testpostgresqllocal" transaction-type="RESOURCE_LOCAL">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <properties>
+            <!-- Les paramètres de connexions -->
+            <property name="javax.persistence.target-database" value="H2"/>
+            <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/Animaux"/>
+            <property name="javax.persistence.jdbc.user" value="Animaux"/>
+            <property name="javax.persistence.jdbc.password" value=""/>
+
+            <!-- Les options de générations des tables -->
+            <property name="eclipselink.ddl-generation.output-mode" value="both"/>
+            <!-- ajouter/enlever : drop-and- -->
+            <property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
+            <!-- et des scripts SQL -->
+            <property name="eclipselink.create-ddl-jdbc-file-name" value="createDDL_ddlGeneration.sql"/>
+            <property name="eclipselink.drop-ddl-jdbc-file-name" value="dropDDL_ddlGeneration.sql"/>
+        </properties>
+        <class>fr.univtln.tbezenger858.Animaux.Oiseaux.Aigle</class>
+        <class>fr.univtln.tbezenger858.Animaux.Oiseaux.Pigeon</class>
+    </persistence-unit>
+
+</persistence>
